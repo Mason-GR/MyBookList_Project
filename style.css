@@ -54,6 +54,11 @@ input {
   margin: 0;
 }
 
+table {
+  border-collapse: collapse;
+  font-size: 0.825rem;
+}
+
 /* MAIN CONTAINER */
 
 .container {
@@ -124,6 +129,18 @@ input {
   width: 100%;
 }
 
+.btn-primary {
+  border-color: #0079a1;
+}
+
+/* TABLE STYLING */
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
 .text-center {
   text-align: center;
 }
@@ -132,4 +149,8 @@ input {
 
 .mt-4 {
   margin-top: 1.5rem;
+}
+
+.mt-5 {
+  margin-top: 3rem;
 }
