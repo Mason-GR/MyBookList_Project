@@ -133,12 +133,46 @@ table {
   border-color: #0079a1;
 }
 
+.btn-danger {
+  color: var(--white);
+  background-color: var(--danger);
+  border-color: var(--danger);
+  text-decoration: none;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.825rem;
+  line-height: 1.5;
+  border-radius: 0;
+}
+
+.btn-danger {
+  border-color: #ea2f10;
+}
+
 /* TABLE STYLING */
 
 .table {
   width: 100%;
   margin-bottom: 1rem;
   color: var(--dark);
+}
+
+.table td,
+.table th {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .text-center {
