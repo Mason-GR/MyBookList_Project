@@ -12,7 +12,7 @@ class Book {
 
 class UI {
   static displayBooks() {
-    const storedBooks = [
+    const StoredBooks = [
       {
         title: "The Name of The Wind",
         author: "Patrick Rothfuss",
@@ -25,7 +25,7 @@ class UI {
       },
     ];
 
-    const books = storedBooks;
+    const books = StoredBooks;
 
     books.forEach((book) => UI.addBookToList(book));
   }

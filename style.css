@@ -79,6 +79,10 @@ table {
   color: var(--primary);
 }
 
+#submit {
+  cursor: pointer;
+}
+
 /* FORM STYLING */
 
 .form-group {
