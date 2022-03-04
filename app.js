@@ -1,5 +1,3 @@
-// Book Class: Represents a Book
-
 class Book {
   constructor(title, author, isbn) {
     this.title = title;
@@ -8,20 +6,18 @@ class Book {
   }
 }
 
-// UI Class: Handles UI (User Interface) Tasks
-
 class UI {
   static displayBooks() {
     const StoredBooks = [
       {
-        title: "The Name of The Wind",
+        title: "The Name of the Wind",
         author: "Patrick Rothfuss",
-        isbn: "58412",
+        isbn: "32690",
       },
       {
-        title: "The Eye of the World",
-        author: "Robert Jordan",
-        isbn: "91668",
+        title: "Dune",
+        author: "Frank Herbert",
+        isbn: "29516",
       },
     ];
 
@@ -36,38 +32,25 @@ class UI {
     const row = document.createElement("tr");
 
     row.innerHTML = `
-    <td>${book.title}</td>
-    <td>${book.author}</td>
-    <td>${book.isbn}</td>
-    <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>`;
+      <td>${book.title}</td>
+      <td>${book.author}</td>
+      <td>${book.isbn}</td>
+      <td><a href="#" class="btn btn-danger btn-sm delete"</a>X</td>`;
 
     list.appendChild(row);
   }
 }
 
-// Store Class: Handles Storage of the Books
-
-// Event: Display Books
-
-document.addEventListener("DOMContentLoaded", UI.displayBooks);
-
-// Event: Add a Book
+document.addEventListener("DOMContentLoaded", UI.displayBooks());
 
 document.querySelector("#book-form").addEventListener("submit", (e) => {
-  // Prevent submit
   e.preventDefault();
 
-  // Get form values
   const title = document.querySelector("#title").value;
   const author = document.querySelector("#author").value;
   const isbn = document.querySelector("#isbn").value;
 
-  // Instantiate the book
   const book = new Book(title, author, isbn);
 
-  //Add Book to UI
-
-  UI.addBookToList(book);
+  console.log(book);
 });
-
-// Event: Remove a Book
