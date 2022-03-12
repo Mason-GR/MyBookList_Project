@@ -1,3 +1,4 @@
+// Book Class: Represents A Book
 class Book {
   constructor(title, author, isbn) {
     this.title = title;
@@ -6,13 +7,16 @@ class Book {
   }
 }
 
+// UI (User Interface) Class: Handles UI Tasks
 class UI {
+  // Event: Displays Books
   static displayBooks() {
     const books = Store.getBooks();
 
     books.forEach((book) => UI.addBookToList(book));
   }
 
+  // Event: Adds a Book
   static addBookToList(book) {
     const list = document.querySelector("#book-list");
 
@@ -52,6 +56,7 @@ class UI {
   }
 }
 
+// Store CLass: Handles Storage of Book Info (In this case local storage)
 class Store {
   static getBooks() {
     let books;
@@ -94,23 +99,31 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
   const author = document.querySelector("#author").value;
   const isbn = document.querySelector("#isbn").value;
 
+  // Validationg Alert
   if (title === "" || author === "" || isbn === "") {
     UI.showAlert("Please fill in all fields", "danger");
   } else {
+    // Instantiate book
     const book = new Book(title, author, isbn);
 
+    // Add book to the UI
     UI.addBookToList(book);
 
+    // Add book to The Storage
     Store.addBook(book);
 
+    // Show Success Alert - Book Added
     UI.showAlert("Book Added", "success");
 
+    // Clearing Fields
     UI.clearFields();
   }
 });
 
+// Event: Removing A Book
 document.querySelector("#book-list").addEventListener("click", (e) => {
   UI.deleteBook(e.target);
 
+  // Show Success Alert - Book Removed
   UI.showAlert("Book Removed", "success");
 });
